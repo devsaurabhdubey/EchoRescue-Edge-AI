@@ -4,7 +4,7 @@
 
 <img width="1364" height="650" alt="Capture" src="https://github.com/user-attachments/assets/b03020d1-141d-4130-9037-b25413bf63f2" />
 
-*(Live Dashboard)*
+[Live Dashboard](https://12e6c81e-f3ff-4fbd-9a40-8c3b7e47c3b1-00-1c588jln1dlfb.worf.replit.dev/)
 
 ## 🚨 The Problem: The "Golden Hour"
 In the aftermath of earthquakes or building collapses, the first 72 hours are critical. Traditional search methods fail in specific scenarios:

@@ -3,10 +3,34 @@ import pandas as pd
 import time
 import random
 
+
+import requests
+
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1444544973981745194/7oCpymQ_O-v0oRhdLD4o8FC8UbX1yD1GGl4bQJThB7w2LXRKPnrZfNdnAEGsUA_I1M47"
+
+def send_discord_alert(lat, lon):
+    """Sends a rescue dispatch signal to the team."""
+    data = {
+        "content": "🚨 **CRITICAL ALERT** 🚨",
+        "embeds": [{
+            "title": "Survivor Detected!",
+            "description": f"Life signs detected at Sector 4.\n**Coordinates:** `{lat}, {lon}`\n**Status:** Urgent",
+            "color": 15548997  # Red color
+        }]
+    }
+    try:
+        requests.post(DISCORD_WEBHOOK_URL, json=data)
+    except:
+        pass
+
+if trigger_tap:  
+    st.session_state.status = "TAP_DETECTED"
+    send_discord_alert(25.2048, 55.2708)  # Triggers the real-world notification
+
 # Page Config
 st.set_page_config(page_title="EchoRescue HQ", page_icon="⛑️", layout="wide")
 
-# Custom CSS for the "Hackathon Look"
+
 st.markdown("""
     <style>
     .stMetric { background-color: #1E1E1E; padding: 15px; border-radius: 5px; border: 1px solid #333; }
